@@ -4,3 +4,25 @@ p{
     font-style: italic;
     text-decoration-line: underline;
 }
+body{
+    background-color: rgba(211, 211, 211, 0.692);
+}
+nav{
+    background-color: rgba(91, 90, 90, 0.921)
+}
+.estilin{
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.estilin2{
+    justify-content: left;
+    text-align: left;
+}
+.estilin3{
+    justify-content: right;
+    text-align: right;
+}
+.corzinha{
+    background-color: rgba(91, 90, 90, 0.921)
+}

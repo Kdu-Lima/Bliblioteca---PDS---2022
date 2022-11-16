@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">    
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid row">
+          <div class="collapse navbar-collapse col-sm-4" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">a</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">b</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-4 estilin">
+            <H2>Biblioteca</H2>
+          </div>
+          <div class="col-sm-4 estilin3">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'imagem/aaa.png' %}" alt="Bootstrap" width="30" height="24">
+              </a>
+        </div>
+    </div>
+</nav>
+<!--pesquisa-->
+<form class="row g-3 estilin">
+    <div class="col-auto">
+      <label class="visually-hidden">Pesquisar Livro</label>
+      <input type="password" class="form-control" id="inputPassword2" placeholder="buscar livro">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">buscar</button>
+    </div>
+  </form>
+  <!--cards-->
+  <div class="corzinha">
+    <div class="row g-4 estilin">
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

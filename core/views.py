@@ -14,3 +14,6 @@ def registro(request):
     #     return redirect('inicio')
 
     return render(request, 'registro.html')
+
+def base(request):
+    return render(request, 'base.html')

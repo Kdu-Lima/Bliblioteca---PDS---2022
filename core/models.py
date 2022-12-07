@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class Tipo(models.Model):
-    nome = models.CharField('Nome', max_length=100)
+    nome = models.CharField('Nome', max_length=100, default='', null=True)
 
 class Disciplina(models.Model):
     nome = models.CharField('Nome', max_length=100)
@@ -14,7 +14,7 @@ class Area(models.Model):
 class Usuario(AbstractUser):
     nome = models.CharField('Nome completo', max_length=100)
     matricula = models.CharField('Matrícula', max_length=14, primary_key=True, unique=True)
-    tipo = models.ForeignKey(Tipo, on_delete=models.PROTECT)
+    tipo = models.ForeignKey(Tipo, on_delete=models.PROTECT, default='', null=True)
 
     USERNAME_FIELD = 'matricula'
 

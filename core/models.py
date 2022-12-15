@@ -13,10 +13,10 @@ class Area(models.Model):
 
 class Usuario(AbstractUser):
     nome = models.CharField('Nome completo', max_length=100)
-    matricula = models.CharField('Matrícula', max_length=14, primary_key=True, unique=True)
+    username = models.CharField('Matrícula', max_length=14, primary_key=True, unique=True)
     tipo = models.ForeignKey(Tipo, on_delete=models.PROTECT, default='', null=True)
 
-    USERNAME_FIELD = 'matricula'
+    USERNAME_FIELD = 'username'
 
 class Subarea(models.Model):
     nome = models.CharField('Nome', max_length=100)
@@ -40,4 +40,3 @@ class Avaliacao(models.Model):
 class Recomendacao(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT)
     id_disciplina = models.ForeignKey(Disciplina, on_delete=models.PROTECT)
-    isbn_livro = models.ForeignKey(Livro, on_delete=models.PROTECT)

@@ -15,6 +15,11 @@
 <body>
     {% include 'base_nav.html' %}
 
+    {% csrf_token %}
+    <p>{{ form.username.label_tag }} {{ form.username }}</p>
+    <p>{{ form.password.label_tag }} {{ form.password }}</p>
+    <p><input type="submit" value="Autenticar" /></p>
+
     {% include 'base_rodape.html' %}
     
 </body>

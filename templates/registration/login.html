@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+    <form method="post">
     <h2>Login</h2>
     {% csrf_token %}
     <p>{{ form.username.label_tag }} {{ form.username }}</p>
     <p>{{ form.password.label_tag }} {{ form.password }}</p>
     <p><input type="submit" value="Autenticar" /></p>
-    
+</form>
 </body>
 </html>

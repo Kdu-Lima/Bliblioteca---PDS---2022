@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponsePermanentRedirect
 from django.contrib.auth.decorators import login_required
+from .models import Usuario
 
 def teste(request):
     return render(request, 'teste.html')
@@ -27,4 +28,16 @@ def login(request):
 
 @login_required
 def perfil(request):
-    return render(request, 'perfil,html')
+    return render(request, 'perfil.html')
+
+
+def cadastro_manual(request):
+    user = Usuario.objects.create_user(
+        username='admin',
+        email='admin@email.com',
+        nome='Administrador',
+        password='123',
+        is_superuser=True
+    )
+    user.save()
+    return redirect('inicial')

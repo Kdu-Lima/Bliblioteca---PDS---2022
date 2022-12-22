@@ -1,7 +1,9 @@
+from operator import imod
 from django.shortcuts import render, redirect
 from django.http import HttpResponsePermanentRedirect
 from django.contrib.auth.decorators import login_required
 from .models import Usuario
+from .forms import UsuarioCreationForm
 
 def teste(request):
     return render(request, 'teste.html')
@@ -10,12 +12,14 @@ def T_inicial(request):
     return render(request, 'index.html')
 
 def registro(request):
-
-    # if form.is_valid():
-    #     form.save()
-    #     return redirect('inicio')
-
-    return render(request, 'registro.html')
+    form = UsuarioCreationForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('login')
+    contexto = {
+    'form': form
+    }
+    return render(request, 'registro.html', contexto)
 
 def base(request):
     return render(request, 'base.html')

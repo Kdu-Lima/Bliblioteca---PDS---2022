@@ -41,6 +41,6 @@ class Recomendacao(models.Model):
 
 class Avaliacao(models.Model):
     nota_geral = models.IntegerField('Nota Geral') #Pesquisar como inserir valores pré-definidos
-    isbn_livro = models.ForeignKey(Livro, on_delete=models.PROTECT)
     usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT)
+    #coloar campo resenha
     #chave estrangeira para recomendação

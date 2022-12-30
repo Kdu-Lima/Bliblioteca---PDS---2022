@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros</title>
+</head>
+<body>
+    <h2>Livros</h2>
+    
+    <p>Listagem de Livros:</p>
+    {% for livro in todos_livros %}
+    <p>Título: {{livro.titulo}} </p>
+    <p>Autores: {{livro.autores}}</p>
+    <p>Data de Lançamento: {{livro.data_lancamento}}</p>
+    <p>Sinopse: {{livro.sinopse}}</p>
+    <p>Capa: {{livro.capa}}</p>
+    {% empty %}
+    <p>Não há livros cadastrados</p>
+    {% endfor %}
+    <a href="{% url 'cadastrar_tipo' %}">Cadastrar</a>
+</body>
+</html>

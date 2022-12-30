@@ -6,8 +6,8 @@ from .models import Usuario
 from .forms import UsuarioCreationForm
 
 #Para os cruds:-----------------------------------------------------------------------------------------------------------------------------
-from .models import Area, Avaliacao, Disciplina, Recomendacao, Subarea, Tipo
-from .forms import AreaForm, AvaliacaoForm, DisciplinaForm, RecomendacaoForm, SubareaForm, TipoForm
+from .models import Area, Avaliacao, Disciplina, Livro, Recomendacao, Subarea, Tipo
+from .forms import AreaForm, AvaliacaoForm, DisciplinaForm, LivroForm, RecomendacaoForm, SubareaForm, TipoForm
 #-------------------------------------------------------------------------------------------------------------------------------------------
 
 def teste(request):
@@ -67,12 +67,27 @@ def listar_disciplina(request):
     }
     return render(request, 'cruds/disciplina.html', contexto)
 
+def listar_livro(request):
+    livros = Livro.objects.all
+    contexto = {
+        'todos_livros': livros
+    }
+    return render(request, 'cruds/livro.html', contexto)
+
+
 def listar_area(request):
     areas = Area.objects.all
     contexto = {
         'todas_areas': areas
     }
     return render(request, 'cruds/area.html', contexto)
+
+def listar_usuario(request):
+    usuarios = Usuario.objects.all()
+    contexto = {
+        'todos_usuarios': usuarios
+    }
+    return render(request, 'cruds/usuario.html', contexto)
 
 def listar_subarea(request):
     subareas = Subarea.objects.all
@@ -122,6 +137,18 @@ def cadastrar_disciplina(request):
     }
     return render(request, 'cruds/disciplina_cadastrar.html', contexto)
 
+def cadastrar_livro(request):
+    form = LivroForm(request.POST or None)
+
+    if form.is_valid():
+        return redirect('listar_livro')
+
+    contexto = {
+        'form_livro': form
+    }
+    
+    return render(request, 'cruds/livro_cadastrar.html', contexto)
+
 def cadastrar_area(request):
     form = AreaForm(request.POST or None)
     
@@ -133,6 +160,18 @@ def cadastrar_area(request):
         'form_area': form
     }
     return render(request, 'cruds/area_cadastrar.html', contexto)
+
+def cadastrar_usuario(request):
+    form = UsuarioCreationForm (request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('listar_usuario')
+
+    contexto = {
+        'form_usuarios': form
+    }
+    return render(request, 'cruds/usuario_cadastrar.html', contexto)
 
 def cadastrar_subarea(request):
     form = SubareaForm(request.POST or None)
@@ -202,6 +241,20 @@ def editar_disciplina(request, id):
     }
     return render(request, 'cruds/disciplina_cadastrar.html', contexto)
 
+def editar_livro(request, id):
+    livro = Livro.objects.get(pk=id)
+
+    form = LivroForm(request.POST or None, instance=livro)
+
+    if form.is_valid():
+        form.save()
+        return redirect('listar_livro')
+    
+    contexto = {
+        'form_disciplina': form
+    }
+    return render(request, 'cruds/usario_cadastrar.html', contexto)
+
 def editar_area(request, id):
     area = Area.objects.get(pk=id)
 
@@ -215,6 +268,21 @@ def editar_area(request, id):
         'form_area': form
     }
     return render(request, 'cruds/area_cadastrar.html', contexto)
+
+def editar_usuario(request, id):
+    usuario = Usuario.objects.get(pk=id)
+
+    form = UsuarioCreationForm(request.POST or None, instance=usuario)
+
+    if form.is_valid():
+        form.save()
+        return redirect('listar_usuario')
+
+    contexto = {
+        'form_usuario': form
+    }
+
+    return render(request, "cruds/usuario_cadastrar.html", contexto)
 
 def editar_subarea(request, id):
     subarea = Subarea.objects.get(pk=id)
@@ -272,10 +340,20 @@ def remover_disciplina(request, id):
     disciplina.delete()
     return redirect('listar_disciplina')
 
+def remover_livro(request, id):
+    livro = Livro.objects.get(pk=id)
+    livro.delete()
+    return redirect('listar_livro')
+
 def remover_area(request, id):
     area = Area.objects.get(pk=id)
     area.delete()
     return redirect('listar_area')
+
+def remover_usuario(request, id):
+    usuario = Usuario.objects.get(pk=id)
+    usuario.delete()
+    return redirect('listar_usuario')
 
 def remover_subarea(request, id):
     subarea = Subarea.objects.get(pk=id)

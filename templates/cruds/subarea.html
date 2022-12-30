@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subarea Management</title>
+</head>
+<body>
+    <h2>Listagem das Subáreas:</h2>
+    {% for subarea in todas_subareas %}
+    <p>Nome: {{subarea.nome}}</p>
+    <p>Area: {{subarea.id_area.nome}} | <a href="{% url 'editar_subarea' subarea.id %}">EDITAR | <a href="{% url 'remover_subarea' subarea.id %}">REMOVER</a></p>
+    {% empty %}
+    <p>Não há subáreas cadastradas!</p>
+    {% endfor %}
+    <a href="{% url 'cadastrar_subarea' %}">Cadastrar</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Management</title>
+</head>
+<body>
+    <h2>Listagem das Avaliações:</h2>
+    {% for avaliacao in todas_avaliacoes %}
+    <p>Nota Geral: {{avaliacao.nota_geral}}</p>
+    <p>Usuario: {{avaliacao.usuario}}</p>
+    <p>Resenha: {{avaliacao.resenha}}</p>
+    <p>Recomendacao: {{avaliacao.id_recomendacao}} | <a href="{% url 'editar_avaliacao' avaliacao.id %}">EDITAR</a> | <a href="{% url 'remover_avaliacao' avaliacao.id %}">REMOVER</a></p>
+    {% empty %}
+    <p>Não há avaliações cadastradas!</p>
+    {% endfor %}
+    <a href="{% url 'cadastrar_avaliacao' %}">Cadastrar</a>
+</body>
+</html>

@@ -5,6 +5,11 @@ from django.contrib.auth.decorators import login_required
 from .models import Usuario
 from .forms import UsuarioCreationForm
 
+#Para os cruds:-----------------------------------------------------------------------------------------------------------------------------
+from .models import Area, Avaliacao, Disciplina, Recomendacao, Subarea, Tipo
+from .forms import AreaForm, AvaliacaoForm, DisciplinaForm, RecomendacaoForm, SubareaForm, TipoForm
+#-------------------------------------------------------------------------------------------------------------------------------------------
+
 def teste(request):
     return render(request, 'teste.html')
 
@@ -45,3 +50,244 @@ def cadastro_manual(request):
     )
     user.save()
     return redirect('inicial')
+
+#CRUDS---------------------------------------------------------------------------------------------------------------------------------------
+
+def listar_tipo(request):
+    tipos = Tipo.objects.all
+    contexto = {
+        'todos_tipos': tipos
+    }
+    return render(request, 'cruds/tipo.html', contexto)
+
+def listar_disciplina(request):
+    disciplinas = Disciplina.objects.all
+    contexto = {
+        'todas_disciplinas': disciplinas
+    }
+    return render(request, 'cruds/disciplina.html', contexto)
+
+def listar_area(request):
+    areas = Area.objects.all
+    contexto = {
+        'todas_areas': areas
+    }
+    return render(request, 'cruds/area.html', contexto)
+
+def listar_subarea(request):
+    subareas = Subarea.objects.all
+    contexto = {
+        'todas_subareas': subareas
+    }
+    return render(request, 'cruds/subarea.html', contexto)
+
+def listar_recomendacao(request):
+    recomendacoes = Recomendacao.objects.all
+    contexto = {
+        'todas_recomendacoes': recomendacoes
+    }
+    return render(request, 'cruds/recomendacao.html', contexto)
+
+def listar_avaliacao(request):
+    avaliacoes = Avaliacao.objects.all
+    contexto = {
+        'todas_avaliacoes': avaliacoes
+    }
+    return render(request, 'cruds/avaliacao.html', contexto)
+
+
+
+
+def cadastrar_tipo(request):
+    form = TipoForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('listar_tipo')
+
+    contexto = {
+        'form_tipo': form
+    }
+    return render(request, 'cruds/tipo_cadastrar.html', contexto)
+
+def cadastrar_disciplina(request):
+    form = DisciplinaForm(request.POST or None)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('listar_disciplina')
+
+    contexto = {
+        'form_disciplina': form
+    }
+    return render(request, 'cruds/disciplina_cadastrar.html', contexto)
+
+def cadastrar_area(request):
+    form = AreaForm(request.POST or None)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('listar_area')
+
+    contexto = {
+        'form_area': form
+    }
+    return render(request, 'cruds/area_cadastrar.html', contexto)
+
+def cadastrar_subarea(request):
+    form = SubareaForm(request.POST or None)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('listar_subarea')
+
+    contexto = {
+        'form_subarea': form
+    }
+    return render(request, 'cruds/subarea_cadastrar.html', contexto)
+
+def cadastrar_recomendacao(request):
+    form = RecomendacaoForm(request.POST or None)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('listar_recomendacao')
+
+    contexto = {
+        'form_recomendacao': form
+    }
+    return render(request, 'cruds/recomendacao_cadastrar.html', contexto)
+
+def cadastrar_avaliacao(request):
+    form = AvaliacaoForm(request.POST or None)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('listar_avaliacao')
+
+    contexto = {
+        'form_avaliacao': form
+    }
+    return render(request, 'cruds/avaliacao_cadastrar.html', contexto)
+
+
+
+
+
+def editar_tipo(request, id):
+    tipo = Tipo.objects.get(pk=id)
+
+    form = TipoForm(request.POST or None, instance=tipo)
+
+    if form.is_valid():
+        form.save()
+        return redirect('listar_tipo')
+
+    contexto = {
+        'form_tipo': form
+    }
+    return render(request, 'cruds/tipo_cadastrar.html', contexto)
+
+def editar_disciplina(request, id):
+    disciplina = Disciplina.objects.get(pk=id)
+    
+    form = DisciplinaForm(request.POST or None, instance=disciplina)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('listar_disciplina')
+
+    contexto = {
+        'form_disciplina': form
+    }
+    return render(request, 'cruds/disciplina_cadastrar.html', contexto)
+
+def editar_area(request, id):
+    area = Area.objects.get(pk=id)
+
+    form = AreaForm(request.POST or None, instance=area)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('listar_area')
+
+    contexto = {
+        'form_area': form
+    }
+    return render(request, 'cruds/area_cadastrar.html', contexto)
+
+def editar_subarea(request, id):
+    subarea = Subarea.objects.get(pk=id)
+
+    form = SubareaForm(request.POST or None, instance=subarea)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('listar_subarea')
+
+    contexto = {
+        'form_subarea': form
+    }
+    return render(request, 'cruds/subarea_cadastrar.html', contexto)
+
+def editar_recomendacao(request, id):
+    recomendacao = Recomendacao.objects.get(pk=id)
+
+    form = RecomendacaoForm(request.POST or None, instance=recomendacao)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('listar_recomendacao')
+
+    contexto = {
+        'form_recomendacao': form
+    }
+    return render(request, 'cruds/recomendacao_cadastrar.html', contexto)
+
+def editar_avaliacao(request, id):
+    avaliacao = Avaliacao.objects.get(pk=id)
+
+    form = AvaliacaoForm(request.POST or None, instance=avaliacao)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('listar_avaliacao')
+
+    contexto = {
+        'form_avaliacao': form
+    }
+    return render(request, 'cruds/avaliacao_cadastrar.html', contexto)
+
+
+
+
+
+def remover_tipo(request, id):
+    tipo = Tipo.objects.get(pk=id)
+    tipo.delete()
+    return redirect('listar_tipo')
+
+def remover_disciplina(request, id):
+    disciplina = Disciplina.objects.get(pk=id)
+    disciplina.delete()
+    return redirect('listar_disciplina')
+
+def remover_area(request, id):
+    area = Area.objects.get(pk=id)
+    area.delete()
+    return redirect('listar_area')
+
+def remover_subarea(request, id):
+    subarea = Subarea.objects.get(pk=id)
+    subarea.delete()
+    return redirect('listar_subarea')
+
+def remover_recomendacao(request, id):
+    recomendacao = Recomendacao.objects.get(pk=id)
+    recomendacao.delete()
+    return redirect('listar_recomendacao')
+
+def remover_avaliacao(request, id):
+    avaliacao = Avaliacao.objects.get(pk=id)
+    avaliacao.delete()
+    return redirect('listar_avaliacao')

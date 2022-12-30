@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Management</title>
+</head>
+<body>
+    <h2>Listagem das Áreas:</h2>
+    {% for area in todas_areas %}
+    <p>Nome: {{area.nome}} | <a href="{% url 'editar_area' area.id %}">EDITAR | <a href="{% url 'remover_area' area.id %}">REMOVER</a></p>
+    {% empty %}
+    <p>Não há áreas cadastradas!</p>
+    {% endfor %}
+    <a href="{% url 'cadastrar_area' %}">Cadastrar</a>
+</body>
+</html>

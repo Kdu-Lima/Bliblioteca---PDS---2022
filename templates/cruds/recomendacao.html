@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendação Management</title>
+</head>
+<body>
+    <h2>Listagem das Recomendações:</h2>
+    {% for recomendacao in todas_recomendacoes %}
+    <p>Usuario: {{recomendacao.usuario}}</p>
+    <p>Disciplina: {{recomendacao.id_disciplina}}</p>
+    <p>Livro: {{recomendacao.isbn_livro}} | <a href="{% url 'editar_recomendacao' recomendacao.id %}">EDITAR | <a href="{% url 'remover_recomendacao' recomendacao.id %}">REMOVER</a></p>
+    {% empty %}
+    <p>Não há recomendações cadastradas!</p>
+    {% endfor %}
+    <a href="{% url 'cadastrar_recomendacao' %}">Cadastrar</a>
+</body>
+</html>

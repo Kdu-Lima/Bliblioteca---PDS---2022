@@ -7,7 +7,8 @@
     <title>Cadastrar Avaliação</title>
 </head>
 <body>
-    <h1>Cadastrar Avaliação</h1>
+    <h1>Selecione o Livro</h1>
+    {% for recomendacao in todos_recomendacoes %}
     <p>Quem recomendou: {{recomendacao.usuario.nome}}</p>
     <p>Disciplina: {{recomendacao.id_disciplina.nome}}</p>
     <p>Título: {{recomendacao.isbn_livro.titulo}} </p>
@@ -15,14 +16,9 @@
     <p>Data de Lançamento: {{recomendacao.isbn_livro.data_lancamento}}</p>
     <p>Sinopse: {{livro.sinopse}}</p>
     <p>Capa: <img src="/media/{{recomendacao.isbn_livro.capa}}" alt="" /></p>
-    
-    <form method="post">
-        {% csrf_token %}
-        {{ form_avaliacao }}
-        <input type="hidden" name="recomendacao_id" value="{{recomendacao.id}}" />
-        <p><input type="submit" value="Cadastrar"></p>
-
-    </form>
-
+    <p><a href="{% url 'cadastrar_avaliacao' recomendacao.id %}"><button>AVALIAR</button></a></p>
+    {% empty %}
+    <p>Não há livros cadastrados</p>
+    {% endfor %}
 </body>
 </html>

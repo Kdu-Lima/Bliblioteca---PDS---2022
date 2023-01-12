@@ -1,11 +1,13 @@
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from core.views import teste, T_inicial, registro, base, aut, perfil, cadastro_manual
 from django.contrib.auth.views import LoginView, LogoutView
 
 #Para os cruds:-------------------------------------------------------------------------------------------------------------------------------
 from core.views import listar_area, listar_avaliacao, listar_disciplina, listar_livro, listar_recomendacao, listar_usuario, listar_subarea, listar_tipo
-from core.views import cadastrar_area, cadastrar_avaliacao, cadastrar_disciplina, cadastrar_livro, cadastrar_recomendacao, cadastrar_usuario, cadastrar_subarea, cadastrar_tipo
+from core.views import cadastrar_area, cadastrar_avaliacao, cadastrar_disciplina, cadastrar_livro, cadastrar_avaliacao_livros, cadastrar_recomendacao, cadastrar_usuario, cadastrar_subarea, cadastrar_tipo
 from core.views import editar_area, editar_avaliacao, editar_disciplina, editar_livro, editar_recomendacao, editar_usuario, editar_subarea, editar_tipo
 from core.views import remover_area, remover_avaliacao, remover_disciplina, remover_livro, remover_recomendacao, remover_usuario, remover_subarea, remover_tipo
 #---------------------------------------------------------------------------------------------------------------------------------------------
@@ -36,9 +38,10 @@ urlpatterns = [
 
 
     path('area_cadastrar/', cadastrar_area, name='cadastrar_area'),
-    path('avaliacao_cadastrar/', cadastrar_avaliacao, name='cadastrar_avaliacao'),
+    path('avaliacao_cadastrar/<int:id>/', cadastrar_avaliacao, name='cadastrar_avaliacao'),
     path('disciplina_cadastrar/', cadastrar_disciplina, name='cadastrar_disciplina'),
     path('livro_cadastrar/', cadastrar_livro, name='cadastrar_livro'),
+    path('cadastrar_avaliacao_livros', cadastrar_avaliacao_livros, name='cadastrar_avaliacao_livros'),
     path('recomendacao_cadastrar/', cadastrar_recomendacao, name='cadastrar_recomendacao'),
     path('usuario_cadastrar/', cadastrar_usuario, name='cadastar_usuario'),
     path('subarea_cadastrar/', cadastrar_subarea, name='cadastrar_subarea'),
@@ -70,4 +73,5 @@ urlpatterns = [
     path('subarea_remover/<int:id>', remover_subarea, name='remover_subarea'),
     path('tipo_remover/<int:id>', remover_tipo, name='remover_tipo'),
     #-------------------------------------------------------------------------------------------------------------------------------------------
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -31,7 +31,9 @@ class Usuario(AbstractUser):
 class Subarea(models.Model):
     nome = models.CharField('Nome', max_length=100)
     id_area = models.ForeignKey(Area, on_delete=models.PROTECT, verbose_name='Area')
-
+    
+    def __str__(self):
+        return self.nome
 
 class Livro(models.Model):
     titulo = models.CharField('Título', max_length=100)
@@ -39,8 +41,12 @@ class Livro(models.Model):
     data_lancamento = models.DateField('Data de lançamento')
     isbn = models.CharField('ISBN', max_length=13, primary_key=True)
     sinopse = models.CharField('Sinopse', max_length=5000)
-    capa = models.ImageField(upload_to='static/imagem/', null='true')
+    capa = models.ImageField(upload_to='media', null='true')
+    usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, verbose_name='Usuário')
     id_subarea = models.ForeignKey(Subarea, on_delete=models.PROTECT, verbose_name='Subarea')
+
+    def __str__(self):
+        return self.titulo
 
 class Recomendacao(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, verbose_name='Usuário')

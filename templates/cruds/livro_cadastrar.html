@@ -9,7 +9,7 @@
 <body>
     
     <h2>Cadastrar Livros</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form_livro }}
         <p><input type="submit" value="Cadastrar"></p>

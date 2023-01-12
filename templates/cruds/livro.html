@@ -15,10 +15,10 @@
     <p>Autores: {{livro.autores}}</p>
     <p>Data de Lançamento: {{livro.data_lancamento}}</p>
     <p>Sinopse: {{livro.sinopse}}</p>
-    <p>Capa: {{livro.capa}}</p>
+    <p>Capa: <img src="/media/{{livro.capa}}" alt="" /></p>
     {% empty %}
     <p>Não há livros cadastrados</p>
     {% endfor %}
-    <a href="{% url 'cadastrar_tipo' %}">Cadastrar</a>
+    <a href="{% url 'cadastrar_livro' %}">Cadastrar</a>
 </body>
 </html>

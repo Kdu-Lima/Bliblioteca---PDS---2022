@@ -138,9 +138,12 @@ def cadastrar_disciplina(request):
     return render(request, 'cruds/disciplina_cadastrar.html', contexto)
 
 def cadastrar_livro(request):
-    form = LivroForm(request.POST or None)
+    form = LivroForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():
+        livro = form.save(commit=False)
+        livro.usuario = request.user
+        livro.save()
         return redirect('listar_livro')
 
     contexto = {
@@ -189,7 +192,9 @@ def cadastrar_recomendacao(request):
     form = RecomendacaoForm(request.POST or None)
     
     if form.is_valid():
-        form.save()
+        recomendacao = form.save(commit=False)
+        recomendacao.usuario = request.user
+        recomendacao.save()
         return redirect('listar_recomendacao')
 
     contexto = {
@@ -197,17 +202,38 @@ def cadastrar_recomendacao(request):
     }
     return render(request, 'cruds/recomendacao_cadastrar.html', contexto)
 
-def cadastrar_avaliacao(request):
+
+
+def cadastrar_avaliacao_livros(request):
+    todos_recomendacoes = Recomendacao.objects.all()
+    contexto = {
+        'todos_recomendacoes': todos_recomendacoes
+    }
+    return render(request, 'cruds/avaliacao_cadastrar_livros.html', contexto)
+
+
+def cadastrar_avaliacao(request, id):
     form = AvaliacaoForm(request.POST or None)
-    
+    recomendacao = Recomendacao.objects.get(pk=id)
     if form.is_valid():
-        form.save()
+        avaliacao = form.save(commit=False)
+        avaliacao.usuario = request.user
+        id_recomendacao = request.POST['recomendacao_id']
+        avaliacao.id_recomendacao = Recomendacao.objects.get(pk=id_recomendacao)
+        avaliacao.save()
         return redirect('listar_avaliacao')
 
     contexto = {
-        'form_avaliacao': form
+        'form_avaliacao': form,
+        'recomendacao': recomendacao,
     }
     return render(request, 'cruds/avaliacao_cadastrar.html', contexto)
+
+
+
+
+
+
 
 
 
@@ -244,7 +270,7 @@ def editar_disciplina(request, id):
 def editar_livro(request, id):
     livro = Livro.objects.get(pk=id)
 
-    form = LivroForm(request.POST or None, instance=livro)
+    form = LivroForm(request.POST or None, request.FILES or None, instance=livro)
 
     if form.is_valid():
         form.save()

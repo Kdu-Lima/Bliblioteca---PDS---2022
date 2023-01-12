@@ -26,7 +26,7 @@ class AreaForm(ModelForm):
 class AvaliacaoForm(ModelForm):
     class Meta:
         model = Avaliacao
-        fields = ['nota_geral', 'usuario', 'resenha', 'id_recomendacao']
+        fields = ['nota_geral', 'resenha']
 
 class DisciplinaForm(ModelForm):
     class Meta:
@@ -41,7 +41,7 @@ class LivroForm(ModelForm):
 class RecomendacaoForm(ModelForm):
     class Meta:
         model = Recomendacao
-        fields = ['usuario', 'id_disciplina', 'isbn_livro']
+        fields = ['id_disciplina', 'isbn_livro']
 
 class UsuarioForm(ModelForm):
     class Meta:

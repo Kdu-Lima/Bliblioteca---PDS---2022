@@ -1,11 +1,18 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
-    <h2>Listagem das Áreas:</h2>
-    {% for area in todas_areas %}
-    <p>Nome: {{area.nome}} | <a href="{% url 'editar_area' area.id %}">EDITAR | <a href="{% url 'remover_area' area.id %}">REMOVER</a></p>
+<div>
+    <h2 class="estilin padando">Listagem das Áreas:</h2>
+    {% for area in todas_areas %}    
+        <div class="card estilin col-sm-4 padando">
+            <div class="card-body boda estilin">
+                <p>Nome: {{area.nome}}</div> 
+                <a href="{% url 'editar_area' area.id %}">EDITAR | <a href="{% url 'remover_area' area.id %}">REMOVER</a></p>
+    </div>
+
     {% empty %}
     <p>Não há áreas cadastradas!</p>
     {% endfor %}
     <a href="{% url 'cadastrar_area' %}">Cadastrar</a>
+</div>
 {% endblock %}

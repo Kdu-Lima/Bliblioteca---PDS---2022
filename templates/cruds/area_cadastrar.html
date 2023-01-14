@@ -2,9 +2,9 @@
 
 {% block conteudo %}
     <h1>Cadastrar Área</h1>
-    <form method="post">
+    <form method="post" class="estilin padando boda">
         {% csrf_token %}
-        {{ form_area }}
-        <p><input type="submit" value="Cadastrar"></p>
+        <p class="padando">{{ form_area }}</p>
+        <p><input type="submit" value="Cadastrar" class="padando2"></p>
     </form>
 {% endblock %}

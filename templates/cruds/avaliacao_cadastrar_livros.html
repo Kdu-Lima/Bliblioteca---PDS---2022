@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Avaliação</title>
-</head>
-<body>
+{% extends 'inicial.html' %}
+
+{% block conteudo %}
     <h1>Selecione o Livro</h1>
     {% for recomendacao in todos_recomendacoes %}
     <p>Quem recomendou: {{recomendacao.usuario.nome}}</p>
@@ -20,5 +14,4 @@
     {% empty %}
     <p>Não há livros cadastrados</p>
     {% endfor %}
-</body>
-</html>
+{% endblock %}

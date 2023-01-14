@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livros</title>
-</head>
-<body>
+{% extends 'inicial.html' %}
+
+{% block conteudo %}
     <h2>Livros</h2>
     
     <p>Listagem de Livros:</p>
@@ -20,5 +14,4 @@
     <p>Não há livros cadastrados</p>
     {% endfor %}
     <a href="{% url 'cadastrar_livro' %}">Cadastrar</a>
-</body>
-</html>
+    {% endblock %}

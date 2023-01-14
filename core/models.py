@@ -42,7 +42,7 @@ class Livro(models.Model):
     isbn = models.CharField('ISBN', max_length=13, primary_key=True)
     sinopse = models.CharField('Sinopse', max_length=5000)
     capa = models.ImageField(upload_to='media', null='true')
-    usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, verbose_name='Usuário')
+    usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, verbose_name='Usuário', null=True)
     id_subarea = models.ForeignKey(Subarea, on_delete=models.PROTECT, verbose_name='Subarea')
 
     def __str__(self):
@@ -56,5 +56,5 @@ class Recomendacao(models.Model):
 class Avaliacao(models.Model):
     nota_geral = models.IntegerField('Nota Geral') #Pesquisar como inserir valores pré-definidos
     usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, verbose_name='Usuário')
-    resenha = models.CharField('Resenha', max_length=5000)
-    id_recomendacao = models.ForeignKey(Recomendacao, on_delete=models.PROTECT, verbose_name='Recomendação')
+    resenha = models.CharField('Resenha', max_length=5000, null=True)
+    id_recomendacao = models.ForeignKey(Recomendacao, on_delete=models.PROTECT, verbose_name='Recomendação', null=True)

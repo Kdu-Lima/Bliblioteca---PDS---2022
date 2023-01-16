@@ -2,118 +2,340 @@
 
 {% block conteudo %}
 <!--pesquisa-->
+<div class="pesquisar">
 <form class="row g-3 estilin">
-    <div class="col-auto">
-      <label class="visually-hidden">Pesquisar Livro</label>
-      <input type="text" class="form-control" id="inputTEXT" placeholder="buscar livro">
+  <div class="col-auto">
+    <label class="visually-hidden">Pesquisar Livro</label>
+    <input type="text" class="form-control" id="inputTEXT" placeholder="buscar livro">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3">buscar</button>
+  </div>
+</form>
+</div>
+<!--cards-->
+<!-- <div class="corzinha col-sm-10 estilin">
+  <div class="row g-4 estilin">
+    <div class="col-sm-3">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+        </div>
+      </div>
     </div>
-    <div class="col-auto">
-      <button type="submit" class="btn btn-primary mb-3">buscar</button>
+    <div class="col-sm-3">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+        </div>
+      </div>
     </div>
-  </form>
-  <!--cards-->
-  <div class="corzinha col-sm-10 estilin">
-    <div class="row g-4 estilin">
-        <div class="col-sm-3">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+            content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-group col-sm-10 estilin padando">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
-        <div class="col-sm-3">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
+      </div>
+    </div>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
-        <div class="col-sm-3">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-            </div>
+      </div>
+    </div>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<section id="cards-area">
+  <ul id="cards-list">
+    <li class="card">
+      <div class="image-container">
+        <span class="background-opacity" style="background-image: url(../static/imagem/books.jpg);"></span>
+        <img src="../static/imagem/books.jpg" alt="" class="image">
       </div>
 
-      <div class="card-group col-sm-10 estilin padando">
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
+      <div class="content-container">
+        <div class="title-container">
+          <div class="title-and-evaluation">
+            <h3>Título</h3>
+            <span>
+              <i class="fa-regular fa-star"></i>
+              4.5
+            </span>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
+          <p class="category">Fantasia / Ficção</p>
+        </div>
+
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam tempore dolor provident inventore dignissimos quaerat sed distinctio minus doloremque quis quos quo accusamus debitis quia voluptatem ipsa tempora, praesentium aliquid mollitia suscipit! Ipsum quo consequuntur debitis repellendus? Non, sequi atque?
         </div>
       </div>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
+    </li>
+    <li class="card">
+      <div class="image-container">
+        <span class="background-opacity" style="background-image: url(../static/imagem/books.jpg);"></span>
+        <img src="../static/imagem/books.jpg" alt="" class="image">
+      </div>
+
+      <div class="content-container">
+        <div class="title-container">
+          <div class="title-and-evaluation">
+            <h3>Título</h3>
+            <span>
+              <i class="fa-regular fa-star"></i>
+              4.5
+            </span>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
+          <p class="category">Fantasia / Ficção</p>
+        </div>
+
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam tempore dolor provident inventore dignissimos quaerat sed distinctio minus doloremque quis quos quo accusamus debitis quia voluptatem ipsa tempora, praesentium aliquid mollitia suscipit! Ipsum quo consequuntur debitis repellendus? Non, sequi atque?
         </div>
       </div>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
+    </li>
+    <li class="card">
+      <div class="image-container">
+        <span class="background-opacity" style="background-image: url(../static/imagem/books.jpg);"></span>
+        <img src="../static/imagem/books.jpg" alt="" class="image">
+      </div>
+
+      <div class="content-container">
+        <div class="title-container">
+          <div class="title-and-evaluation">
+            <h3>Título</h3>
+            <span>
+              <i class="fa-regular fa-star"></i>
+              4.5
+            </span>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
+          <p class="category">Fantasia / Ficção</p>
+        </div>
+
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam tempore dolor provident inventore dignissimos quaerat sed distinctio minus doloremque quis quos quo accusamus debitis quia voluptatem ipsa tempora, praesentium aliquid mollitia suscipit! Ipsum quo consequuntur debitis repellendus? Non, sequi atque?
         </div>
       </div>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
+    </li>
+    <li class="card">
+      <div class="image-container">
+        <span class="background-opacity" style="background-image: url(../static/imagem/hp.jpg);"></span>
+        <img src="../static/imagem/hp.jpg" alt="" class="image">
+      </div>
+
+      <div class="content-container">
+        <div class="title-container">
+          <div class="title-and-evaluation">
+            <h3>Título</h3>
+            <span>
+              <i class="fa-regular fa-star"></i>
+              4.5
+            </span>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
+          <p class="category">Fantasia / Ficção</p>
+        </div>
+
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam tempore dolor provident inventore dignissimos quaerat sed distinctio minus doloremque quis quos quo accusamus debitis quia voluptatem ipsa tempora, praesentium aliquid mollitia suscipit! Ipsum quo consequuntur debitis repellendus? Non, sequi atque?
         </div>
       </div>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
+    </li>
+    <li class="card">
+      <div class="image-container">
+        <span class="background-opacity" style="background-image: url(../static/imagem/hp.jpg);"></span>
+        <img src="../static/imagem/hp.jpg" alt="" class="image">
+      </div>
+
+      <div class="content-container">
+        <div class="title-container">
+          <div class="title-and-evaluation">
+            <h3>Título</h3>
+            <span>
+              <i class="fa-regular fa-star"></i>
+              4.5
+            </span>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
+          <p class="category">Fantasia / Ficção</p>
+        </div>
+
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam tempore dolor provident inventore dignissimos quaerat sed distinctio minus doloremque quis quos quo accusamus debitis quia voluptatem ipsa tempora, praesentium aliquid mollitia suscipit! Ipsum quo consequuntur debitis repellendus? Non, sequi atque?
         </div>
       </div>
-    </div>
-    </div>
+    </li>
+    <li class="card">
+      <div class="image-container">
+        <span class="background-opacity" style="background-image: url(../static/imagem/hp.jpg);"></span>
+        <img src="../static/imagem/hp.jpg" alt="" class="image">
+      </div>
+
+      <div class="content-container">
+        <div class="title-container">
+          <div class="title-and-evaluation">
+            <h3>Título</h3>
+            <span>
+              <i class="fa-regular fa-star"></i>
+              4.5
+            </span>
+          </div>
+          <p class="category">Fantasia / Ficção</p>
+        </div>
+
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam tempore dolor provident inventore dignissimos quaerat sed distinctio minus doloremque quis quos quo accusamus debitis quia voluptatem ipsa tempora, praesentium aliquid mollitia suscipit! Ipsum quo consequuntur debitis repellendus? Non, sequi atque?
+        </div>
+      </div>
+    </li>
+    <li class="card">
+      <div class="image-container">
+        <span class="background-opacity" style="background-image: url(../static/imagem/gv.jpg);"></span>
+        <img src="../static/imagem/gv.jpg" alt="" class="image">
+      </div>
+
+      <div class="content-container">
+        <div class="title-container">
+          <div class="title-and-evaluation">
+            <h3>Título</h3>
+            <span>
+              <i class="fa-regular fa-star"></i>
+              4.5
+            </span>
+          </div>
+          <p class="category">Fantasia / Ficção</p>
+        </div>
+
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam tempore dolor provident inventore dignissimos quaerat sed distinctio minus doloremque quis quos quo accusamus debitis quia voluptatem ipsa tempora, praesentium aliquid mollitia suscipit! Ipsum quo consequuntur debitis repellendus? Non, sequi atque?
+        </div>
+      </div>
+    </li>
+    <li class="card">
+      <div class="image-container">
+        <span class="background-opacity" style="background-image: url(../static/imagem/gv.jpg);"></span>
+        <img src="../static/imagem/gv.jpg" alt="" class="image">
+      </div>
+
+      <div class="content-container">
+        <div class="title-container">
+          <div class="title-and-evaluation">
+            <h3>Título</h3>
+            <span>
+              <i class="fa-regular fa-star"></i>
+              4.5
+            </span>
+          </div>
+          <p class="category">Fantasia / Ficção</p>
+        </div>
+
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam tempore dolor provident inventore dignissimos quaerat sed distinctio minus doloremque quis quos quo accusamus debitis quia voluptatem ipsa tempora, praesentium aliquid mollitia suscipit! Ipsum quo consequuntur debitis repellendus? Non, sequi atque?
+        </div>
+      </div>
+    </li>
+    <li class="card">
+      <div class="image-container">
+        <span class="background-opacity" style="background-image: url(../static/imagem/gv.jpg);"></span>
+        <img src="../static/imagem/gv.jpg" alt="" class="image">
+      </div>
+
+      <div class="content-container">
+        <div class="title-container">
+          <div class="title-and-evaluation">
+            <h3>Título</h3>
+            <span>
+              <i class="fa-regular fa-star"></i>
+              4.5
+            </span>
+          </div>
+          <p class="category">Fantasia / Ficção</p>
+        </div>
+
+        <div class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam tempore dolor provident inventore dignissimos quaerat sed distinctio minus doloremque quis quos quo accusamus debitis quia voluptatem ipsa tempora, praesentium aliquid mollitia suscipit! Ipsum quo consequuntur debitis repellendus? Non, sequi atque?
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
 {% endblock %}

@@ -1,0 +1,147 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+body {
+  
+}
+:root {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.estilin {
+	text-align: center;
+}
+
+.estilin3 {
+	text-align: right;
+}
+
+#cards-area {
+  margin-inline: auto;
+  /* width: 900px; */
+}
+
+#cards-list {
+  background-color: #a8dadc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: 100%;
+  justify-content: center;
+  list-style-type: none;
+  overflow: auto;
+  padding: 20px;
+}
+
+.card {
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0 0 0 / 8%);
+  height: 210px;
+  overflow: hidden;
+  position: relative;
+  width: calc(100% / 3 - 20px);
+}
+
+.card:hover .category {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0 0 0 / 40%);
+}
+
+.card:hover .content-container {
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.card:hover .description {
+  display: inline-block;
+}
+
+.image-container {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.background-opacity {
+  background-position: center;
+  background-size: cover;
+  opacity: .4;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.image {
+  height: 140px;
+  position: relative;
+  z-index: 1;
+}
+
+.content-container {
+  justify-content: center;
+  background-color: rgba(255 255 255 / 80%);
+  bottom: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  left: 0;
+  padding: 12px;
+  position: absolute;
+  right: 0;
+  transition: all ease-in 300ms;
+  z-index: 2;
+}
+
+.title-and-evaluation {
+  color: #2d3436;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.title-and-evaluation h3 {
+  color: #c0392b;
+}
+
+.title-and-evaluation span {
+  color: #c0392b;
+  font-weight: 700;
+}
+
+.category {
+  font-weight: 300;
+  font-size: .9rem;
+}
+
+.description {
+  display: none;
+  flex-grow: 1;
+  padding-top: 8px;
+  font-style: italic;
+  line-height: 1.2rem;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.description::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background-color: rgba(0 0 0 / 10%);
+}
+
+.description::-webkit-scrollbar-thumb {
+  background-color: #c0392b;
+  border-radius: 8px;
+}

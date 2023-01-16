@@ -1,10 +1,13 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
-    <h1>Cadastrar Área</h1>
-    <form method="post" class="estilin padando boda">
-        {% csrf_token %}
-        <p class="padando">{{ form_area }}</p>
-        <p><input type="submit" value="Cadastrar" class="padando2"></p>
-    </form>
+<section id="area-cadastrar">
+	<h1>Cadastrar Área</h1>
+	<h1 class="testeee">TESTE</h1>
+	<form method="post" class="estilin padando boda">
+		{% csrf_token %}
+		<p class="padando">{{ form_area }}</p>
+		<input type="submit" value="Cadastrar" class="btn btn-primary">
+	</form>
+</section>
 {% endblock %}

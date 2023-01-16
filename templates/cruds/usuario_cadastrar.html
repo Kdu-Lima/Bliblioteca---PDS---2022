@@ -2,9 +2,13 @@
 
 {% block conteudo %}
     <h2>Cadastrar Usuário</h2>
-    <form method="post">
+    <form method="post" class="form-cadastrar-usuario">
+        <section class="area-cadastrar-usuario">
+            <div class="cadastrar-usuario">
         {% csrf_token %}
-        {{ form_usuario }}
-        <p><input type="submit" value="Cadastrar"></p>
+        {{ form_usuarios }}
+        <p><input type="submit" class="cadastrar-usuario-input" value="Cadastrar"></p>
     </form>
+</section>
+</div>
     {% endblock %}

@@ -10,10 +10,9 @@
         {% csrf_token %}
         {{ form|crispy }}
     <p><input type="submit" class="login-input" value="Entrar"/></p>
-    <p class="p-login">Não tem conta?<a class="a-login" href=" ">Criar conta</a></p>
+    <p class="p-login">Não tem conta?<a class="a-login" href= "/usuario_cadastrar">Criar conta</a></p>
     </form>
         </div>
     </section>
 </body>
-{% include 'base_rodape.html' %}
 {% endblock %}

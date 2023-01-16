@@ -1,11 +1,19 @@
 {% extends 'inicial.html' %}
+{% load crispy_forms_tags %}
 
 {% block conteudo %}
-    <form method="post" class="estilin">
-    <h2>Login</h2>
-    {% csrf_token %}
-    <p>{{ form.username.label_tag }} {{ form.username }}</p>
-    <p>{{ form.password.label_tag }} {{ form.password }}</p>
-    <p><input type="submit" value="Autenticar" /></p>
-</form>
+<body class="body-login">
+    <form method="post" class="form-login">
+    <section class="area-login">
+        -<div class="login">
+            <!---<div class="livro-login"><img src="../static/imagem/livro.png"></div> -->
+        {% csrf_token %}
+        {{ form|crispy }}
+    <p><input type="submit" class="login-input" value="Entrar"/></p>
+    <p class="p-login">Não tem conta?<a class="a-login" href=" ">Criar conta</a></p>
+    </form>
+        </div>
+    </section>
+</body>
+{% include 'base_rodape.html' %}
 {% endblock %}

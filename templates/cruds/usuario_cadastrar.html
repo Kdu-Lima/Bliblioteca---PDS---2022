@@ -3,7 +3,7 @@
 {% block conteudo %}
     <h2>Cadastrar Usuário</h2>
     <form method="post">
-        {% csrf_toke %}
+        {% csrf_token %}
         {{ form_usuario }}
         <p><input type="submit" value="Cadastrar"></p>
     </form>

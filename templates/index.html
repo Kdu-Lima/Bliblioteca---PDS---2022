@@ -2,16 +2,11 @@
 
 {% block conteudo %}
 <!--pesquisa-->
-<div class="pesquisar">
-<form class="row g-3 estilin">
-  <div class="col-auto">
-    <label class="visually-hidden">Pesquisar Livro</label>
-    <input type="text" class="form-control" id="inputTEXT" placeholder="buscar livro">
-  </div>
-  <div class="col-auto">
-    <button type="submit" class="btn btn-primary mb-3">buscar</button>
-  </div>
-</form>
+<div class="input-group rounded">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
 </div>
 <!--cards-->
 <!-- <div class="corzinha col-sm-10 estilin">

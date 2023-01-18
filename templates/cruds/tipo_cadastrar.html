@@ -1,10 +1,15 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
-    <h1>Cadastrar Tipo de Usuário</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form_tipo }}
-        <p><input type="submit" value="Cadastrar"></p>
-    </form>
-    {% endblock %}
+<h2 class="estilin padando">Cadastrar Tipo</h2>
+<form method="post" class="form-cadastrar-tipo" >
+    <section class="area-cadastrar-tipo">
+        <div class="cadastrar-tipo">
+    {% csrf_token %}
+    {{ form_tipo }}
+</form>
+<br>
+<p><input type="submit" class="btn btn-primary" value="Cadastrar"></p>
+</section>
+</div>
+{% endblock %}

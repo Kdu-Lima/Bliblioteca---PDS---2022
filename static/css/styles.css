@@ -303,15 +303,73 @@
   padding: auto;
 }
 
-.cadastrar-usuario-input {
+
+.area-cadastrar-subarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastrar-subarea {
+  margin-top: auto;
+  margin-bottom: auto;
   border-radius: 8px;
-  margin-top: 10px;
-  border: none;
+  display: flex;
+  background-color: #1E90FF;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 60px;
+}
+
+.form-cadastrar-subarea {
+  height: 79%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   padding: auto;
-  width: 150px;
-  height: 45px;
-  outline: none;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: bold;
+}
+
+
+
+
+
+
+
+.form-cadastrar-tipo {
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: auto;
+}
+
+
+.area-cadastrar-tipo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastrar-tipo {
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 8px;
+  display: flex;
+  background-color: #1E90FF;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 60px;
+}
+
+.form-cadastrar-tipo {
+  height: 79%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: auto;
 }

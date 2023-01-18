@@ -1,10 +1,16 @@
 {% extends 'inicial.html' %}
+{% load crispy_forms_tags %}
 
 {% block conteudo %}
-    <h1>Cadastrar Subárea</h1>
-    <form method="post">
+    <h1 class="estilin padando">Cadastrar Subárea</h1>
+    <form method="post" class="form-cadastrar-subarea">
+        <section class="area-cadastrar-subarea">
+            <div class="cadastrar-subarea">
         {% csrf_token %}
         {{ form_subarea }}
-        <p><input type="submit" value="Cadastrar"></p>
     </form>
+    <br>
+    <p><input type="submit" class="btn btn-primary" value="Cadastrar"></p>
+    </section>
+    </div>
     {% endblock %}

@@ -1,12 +1,22 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
+<div class="estilin padando" style="height: calc(100% - (55.34px + 89.5px));" >
     <h2>Listagem das Subáreas:</h2>
     {% for subarea in todas_subareas %}
+<div class="card estilin col-sm-4 padando" style="margin: auto; padding: 50px; background-color: #1E90FF; height: 200px; width: 300px; margin-top: 5px; color: white; text-transform: uppercase;"  >
+    <div class="card-body boda estilin">
+    
     <p>Nome: {{subarea.nome}}</p>
-    <p>Area: {{subarea.id_area.nome}} | <a href="{% url 'editar_subarea' subarea.id %}">EDITAR | <a href="{% url 'remover_subarea' subarea.id %}">REMOVER</a></p>
+    <p>Area: {{subarea.id_area.nome}}</div></p>
+    <p><a href="{% url 'editar_subarea' subarea.id %}" class="btn btn-primary">EDITAR <a style="background-color: rgb(165, 47, 47); margin-left: 10px; outline: none;" href="{% url 'remover_subarea' subarea.id %}" class="btn btn-primary">REMOVER</a></p>
+
+</div>
+
     {% empty %}
     <p>Não há subáreas cadastradas!</p>
     {% endfor %}
-    <a href="{% url 'cadastrar_subarea' %}">Cadastrar</a>
+    <br>
+    <a href="{% url 'cadastrar_subarea' %}" class="btn btn-primary">Cadastrar</a> <br>
+</div>
     {% endblock %}

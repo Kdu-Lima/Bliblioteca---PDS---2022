@@ -1,6 +1,7 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
+<div class="estilin padando" style="height: calc(100% - (55.34px + 89.5px)); margin-top: 40px;">
     <h2>Listagem das Avaliações:</h2>
     {% for avaliacao in todas_avaliacoes %}
     <p>Nota Geral: {{avaliacao.nota_geral}}</p>
@@ -10,5 +11,6 @@
     {% empty %}
     <p>Não há avaliações cadastradas!</p>
     {% endfor %}
-    <a href="{% url 'cadastrar_avaliacao_livros' %}">Cadastrar</a>
+    <a href="{% url 'cadastrar_avaliacao_livros' %}" class="btn btn-primary">Cadastrar</a>
+</div>
 {% endblock %}

@@ -1,6 +1,7 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
+<div class="estilin padando" style="height: calc(100% - (55.34px + 89.5px));">
     <h1>Selecione o Livro</h1>
     {% for recomendacao in todos_recomendacoes %}
     <p>Quem recomendou: {{recomendacao.usuario.nome}}</p>
@@ -13,5 +14,6 @@
     <p><a href="{% url 'cadastrar_avaliacao' recomendacao.id %}"><button>AVALIAR</button></a></p>
     {% empty %}
     <p>Não há livros cadastrados</p>
+</div>
     {% endfor %}
 {% endblock %}

@@ -2,17 +2,18 @@
 {% load crispy_forms_tags %}
 
 {% block conteudo %}
-    <body class="body-cadastrar-livro">
-    <h2>Cadastrar Livros</h2>
-    <section class="area-cadastrar-livro">
-        <div class="cadastrar-livro">
-    <form method="post" class="form-cadastrar-livro" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form_livro }}
-        <p><input type="submit" class="cadastrar-livro-input" value="Cadastrar"></p>
 
-    </form>
-    </div>
-    </section>
-</body>
-    {% endblock %}
+<section class="body-cadastrar-livro estilin padando" style="margin-top: 40px;">
+	<h2>Cadastrar Livros</h2>
+	<section class="area-cadastrar-livro">
+		<div class="cadastrar-livro">
+			<form method="post" class="form-cadastrar-livro" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ form_livro }}
+				<p><input type="submit" class="cadastrar-livro-input" value="Cadastrar"></p>
+			</form>
+		</div>
+	</section>
+</section>
+
+{% endblock %}

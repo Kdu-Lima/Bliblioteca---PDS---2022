@@ -1,9 +1,9 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
-<div>
-    <h2 class="estilin padando">Listagem das Áreas:</h2>
-    {% for area in todas_areas %}    
+<div class="estilin padando" style="height: calc(100% - (55.34px + 89.5px));" >
+    <h2>Listagem das Áreas:</h2>
+    {% for area in todas_areas %}
         <div class="card estilin col-sm-4 padando">
             <div class="card-body boda estilin">
                 <p>Nome: {{area.nome}}</div> 
@@ -13,6 +13,6 @@
     {% empty %}
     <p>Não há áreas cadastradas!</p>
     {% endfor %}
-    <a href="{% url 'cadastrar_area' %}">Cadastrar</a>
+    <a href="{% url 'cadastrar_area' %}" class="btn btn-primary">Cadastrar</a>
 </div>
 {% endblock %}

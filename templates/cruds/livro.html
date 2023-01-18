@@ -1,6 +1,7 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
+<div class="estilin padando" style="height: calc(100% - (55.34px + 89.5px)); margin-top: 40px;">
     <h2>Livros</h2>
     
     <p>Listagem de Livros:</p>
@@ -13,5 +14,6 @@
     {% empty %}
     <p>Não há livros cadastrados</p>
     {% endfor %}
-    <a href="{% url 'cadastrar_livro' %}">Cadastrar</a>
+    <a href="{% url 'cadastrar_livro' %}" class="btn btn-primary">Cadastrar</a>
+</div>
     {% endblock %}

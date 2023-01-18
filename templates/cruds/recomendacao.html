@@ -1,6 +1,7 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
+<div class="estilin padando" style="height: calc(100% - (55.34px + 89.5px));">
     <h2>Listagem das Recomendações:</h2>
     {% for recomendacao in todas_recomendacoes %}
     <p>Usuario: {{recomendacao.usuario}}</p>
@@ -9,5 +10,6 @@
     {% empty %}
     <p>Não há recomendações cadastradas!</p>
     {% endfor %}
-    <a href="{% url 'cadastrar_recomendacao' %}">Cadastrar</a>
+    <a href="{% url 'cadastrar_recomendacao' %}" class="btn btn-primary">Cadastrar</a>
+</div>
     {% endblock %}

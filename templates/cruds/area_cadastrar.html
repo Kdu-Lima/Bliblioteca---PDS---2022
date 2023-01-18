@@ -1,9 +1,8 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
-<section id="area-cadastrar">
-	<h1>Cadastrar Área</h1>
-	<h1 class="testeee">TESTE</h1>
+<section style="height: calc(100% - (55.34px + 89.5px));">
+	<h1 class="estilin padando">Cadastrar Área</h1>
 	<form method="post" class="estilin padando boda">
 		{% csrf_token %}
 		<p class="padando">{{ form_area }}</p>

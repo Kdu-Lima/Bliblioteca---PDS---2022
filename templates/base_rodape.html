@@ -1,15 +1,17 @@
 {% load static %}
 <section class="">
   <!-- Footer -->
-  <footer class="text-center text-white" style="background-color: #0a4275;">
+  <footer
+    class="text-center text-white"
+    style="background-color: #0a4275;">
     <!-- Grid container -->
     <div class="container p-2 pb-0">
       <!-- Section: CTA -->
       <section class="">
         <p class="d-flex justify-content-center align-items-center">
           <span class="me-3">Não tem conta?</span>
-          <button type="button" class="btn btn-outline-light btn-rounded">
-            Registre-se!
+          <a href="{% url 'cadastar_usuario' %}" class="btn btn-outline-light btn-rounded">Registre-se!</a>
+            
           </button>
         </p>
       </section>

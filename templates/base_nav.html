@@ -14,7 +14,7 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a style="color: black;" class="nav-link active" aria-current="page" href="{% url 'inicial' %}">Retornar</a>
+                  <a style="color: black;" class="nav-link active" aria-current="page" href="{% url 'inicial' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
                   <a style="color: black;" class="nav-link" href="{% url 'listar_livro' %}">Livros cadastrados</a>
@@ -36,7 +36,7 @@
             </div>
           </div>
           <div class="col-sm-4 estilin">
-            <H2 style="color: white;">BIBLIOTECA</H2> 
+            <a href="{% url 'inicial' %}"><H2 style="color: white;">BIBLIOTECA</H2> </a>
           </div>
           <div class="col-sm-4 estilin3">
             <a class="navbar-brand" href="{% url 'login' %}">

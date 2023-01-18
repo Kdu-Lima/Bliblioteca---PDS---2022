@@ -1,10 +1,12 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
+<div class="estilin padando" style="height: calc(100% - (55.34px + 89.5px));">
     <h1>Cadastrar Recomendação</h1>
     <form method="post">
         {% csrf_token %}
         {{ form_recomendacao }}
-        <p><input type="submit" value="Cadastrar"></p>
+        <p><input type="submit" value="Cadastrar" class="btn btn-primary"></p>
     </form>
+</div>
     {% endblock %}

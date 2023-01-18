@@ -4,15 +4,17 @@
 <div class="estilin padando" style="height: calc(100% - (55.34px + 89.5px));" >
     <h2>Listagem das Áreas:</h2>
     {% for area in todas_areas %}
-        <div class="card estilin col-sm-4 padando">
-            <div class="card-body boda estilin">
-                <p>Nome: {{area.nome}}</div> 
-                <a href="{% url 'editar_area' area.id %}">EDITAR | <a href="{% url 'remover_area' area.id %}">REMOVER</a></p>
+        <div class="card estilin col-sm-4 padando" style="margin: auto; padding: 50px; background-color: #1E90FF; height: 180px; width: 300px; margin-top: 5px;" >
+            <div class="card-body boda estilin" style="text-transform: uppercase; color: white;">
+                <p>Nome: {{area.nome}}</div></p>
+                <p><a style="outline: none;" href="{% url 'editar_area' area.id %}" class="btn btn-primary">EDITAR<a style="background-color: rgb(165, 47, 47); margin-left: 10px; outline: none;" href="{% url 'remover_area' area.id %}" class="btn btn-primary">REMOVER</a></p>
+                
     </div>
 
     {% empty %}
     <p>Não há áreas cadastradas!</p>
     {% endfor %}
+    <br>
     <a href="{% url 'cadastrar_area' %}" class="btn btn-primary">Cadastrar</a>
 </div>
 {% endblock %}

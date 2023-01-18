@@ -6,7 +6,7 @@ from .models import Usuario
 from .forms import UsuarioCreationForm
 
 #Para os cruds:-----------------------------------------------------------------------------------------------------------------------------
-from .models import Area, Avaliacao, Disciplina, Livro, Recomendacao, Subarea, Tipo
+from .models import Area, Avaliacao, Disciplina, Livro, Recomendacao, Subarea, Tipo, Usuario
 from .forms import AreaForm, AvaliacaoForm, DisciplinaForm, LivroForm, RecomendacaoForm, SubareaForm, TipoForm
 #-------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -37,7 +37,11 @@ def login(request):
 
 @login_required
 def perfil(request):
-    return render(request, 'perfil.html')
+    usuario =       Usuario.objects.all
+    contexto = {
+        'todos_tipos': usuario
+    }
+    return render(request, 'perfil.html', contexto)
 
 
 def cadastro_manual(request):

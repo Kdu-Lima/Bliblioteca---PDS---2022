@@ -5,6 +5,10 @@
 	outline: none;
 }
 
+.padando{
+padding-bottom: 50px;
+}
+
 .body-inicial {
   margin: 0;
   height: 100vh;

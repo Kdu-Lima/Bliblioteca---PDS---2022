@@ -237,13 +237,14 @@ padding-bottom: 50px;
 
 .area-cadastrar-livro {
   display: flex;
-  height: 100vh;
+  height: 60vh;
   justify-content: center;
   align-items: center;
   margin-top: -60px;
 }
 
 .form-cadastrar-livro {
+  color: white;
   height: 100%;
   text-align: center;
   width: 100%;
@@ -251,7 +252,7 @@ padding-bottom: 50px;
   flex-direction: column;
   padding: auto;
 }
-/*
+
 .cadastrar-livro {
   border-radius: 8px;
   display: flex;
@@ -260,7 +261,7 @@ padding-bottom: 50px;
   align-items: center;
   width: 550px;
   height: 450px;
-  padding: 80px;
+  padding: 20px;
 }
 
 .cadastrar-livro-input {
@@ -275,7 +276,7 @@ padding-bottom: 50px;
   text-transform: uppercase;
   font-weight: bold;
 }
-*/
+
 
 
 

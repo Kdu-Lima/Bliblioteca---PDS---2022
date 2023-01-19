@@ -10,7 +10,7 @@
 <p>
     Nome: {{ usuario.nome }}
     User: {{ usuario.username }}
-    Tipo: {{ usuario.tipo }}
+    Tipo de usuário: {{ usuario.tipo }}
      <a href="{% url 'editar_usuario' usuario.username %}">Editar</a>
     | <a href="{% url 'remover_usuario' usuario.username %}">Remover</a>
 </p>

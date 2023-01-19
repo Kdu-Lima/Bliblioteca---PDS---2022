@@ -1,10 +1,12 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
+<div class="estilin padando">
     <h1>Cadastrar Disciplina</h1>
     <form method="post">
         {% csrf_token %}
         {{ form_disciplina }}
-        <p><input type="submit" value="Cadastrar"></p>
+        <input type="submit" value="Cadastrar" class="btn btn-primary">
     </form>
+</div>
 {% endblock %}

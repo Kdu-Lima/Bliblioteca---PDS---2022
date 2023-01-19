@@ -1,6 +1,7 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
+<div class="estilin padando">
     <h2>Listagem das Disciplinas:</h2>
     {% for disciplina in todas_disciplinas %}
 
@@ -12,5 +13,6 @@
     {% empty %}
     <p>Não há disciplinas cadastradas!</p>
     {% endfor %}
-    <a href="{% url 'cadastrar_disciplina' %}">Cadastrar</a>
+    <a href="{% url 'cadastrar_disciplina' %}" class="btn btn-primary">Cadastrar</a>
+</div>
 {% endblock %}

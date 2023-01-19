@@ -352,7 +352,8 @@ def editar_avaliacao(request, id):
         return redirect('listar_avaliacao')
 
     contexto = {
-        'form_avaliacao': form
+        'form_avaliacao': form,
+        'recomendacao': avaliacao.id_recomendacao
     }
     return render(request, 'cruds/avaliacao_cadastrar.html', contexto)
 

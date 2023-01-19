@@ -6,12 +6,11 @@
 <section class="body-cadastrar-livro estilin padando" style="margin-top: 40px;">
 	<h2>Cadastrar Livros</h2>
 	<br>
-	<section class="area-cadastrar-livro">
+	<section class="area-cadastrar-livro" style="color: white;">
 		<div class="cadastrar-livro">
 			<form method="post" class="form-cadastrar-livro" enctype="multipart/form-data">
 				{% csrf_token %}
 				{{ form_livro }}
-				<br>
 				<p><input type="submit" class="cadastrar-livro-input btn btn-success" value="Cadastrar"></p>
 			</form>
 			

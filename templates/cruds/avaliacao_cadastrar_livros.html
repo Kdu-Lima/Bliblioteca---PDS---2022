@@ -10,7 +10,7 @@
     <p>Autores: {{recomendacao.isbn_livro.autores}}</p>
     <p>Data de Lançamento: {{recomendacao.isbn_livro.data_lancamento}}</p>
     <p>Sinopse: {{livro.sinopse}}</p>
-    <p>Capa: <img src="/media/{{recomendacao.isbn_livro.capa}}" alt="" /></p>
+    <p>Capa: <img src="/media/{{recomendacao.isbn_livro.capa}}" alt="" width="250px"/></p>
     <p><a href="{% url 'cadastrar_avaliacao' recomendacao.id %}"><button>AVALIAR</button></a></p>
     {% empty %}
     <p>Não há livros cadastrados</p>

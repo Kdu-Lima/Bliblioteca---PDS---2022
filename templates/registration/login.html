@@ -3,14 +3,15 @@
 
 {% block conteudo %}
 <body class="body-login">
-    <form method="post" class="form-login">
+    <h1 class="estilin padando">Login</h1>
+    <form method="post" class="form-login" style="margin-top: -120px;">
     <section class="area-login">
         -<div class="login">
             <!---<div class="livro-login"><img src="../static/imagem/livro.png"></div> -->
         {% csrf_token %}
         {{ form|crispy }}
     <p><input type="submit" class="login-input" value="Entrar"/></p>
-    <p class="p-login">Não tem conta?<a class="a-login" href= "/usuario_cadastrar">Criar conta</a></p>
+    <p class="p-login">Não tem conta?<a class="a-login btn btn-success" href= "/usuario_cadastrar">Criar conta</a></p>
     </form>
         </div>
     </section>

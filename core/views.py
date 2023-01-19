@@ -370,8 +370,8 @@ def remover_disciplina(request, id):
     disciplina.delete()
     return redirect('listar_disciplina')
 
-def remover_livro(request, id):
-    livro = Livro.objects.get(pk=id)
+def remover_livro(request, isbn):
+    livro = Livro.objects.get(pk=isbn)
     livro.delete()
     return redirect('listar_livro')
 
@@ -380,7 +380,7 @@ def remover_area(request, id):
     area.delete()
     return redirect('listar_area')
 
-def remover_usuario(request, id):
+def remover_usuario(request, username):
     usuario = Usuario.objects.get(pk=id)
     usuario.delete()
     return redirect('listar_usuario')

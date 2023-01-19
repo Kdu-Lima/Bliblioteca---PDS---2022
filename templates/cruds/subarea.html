@@ -7,7 +7,7 @@
 <div class="card estilin col-sm-4 padando" style="margin: auto; padding: 50px; background-color: #1E90FF; height: 200px; width: 300px; margin-top: 5px; color: white; text-transform: uppercase;"  >
     <div class="card-body boda estilin">
     
-    <p>Nome: {{subarea.nome}}</p>
+    <p>Subarea: {{subarea.nome}}</p>
     <p>Area: {{subarea.id_area.nome}}</div></p>
     <p><a href="{% url 'editar_subarea' subarea.id %}" class="btn btn-primary">EDITAR <a style="background-color: rgb(165, 47, 47); margin-left: 10px; outline: none;" href="{% url 'remover_subarea' subarea.id %}" class="btn btn-primary">REMOVER</a></p>
 

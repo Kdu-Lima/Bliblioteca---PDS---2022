@@ -2,7 +2,7 @@
 
 {% block conteudo %}
 <div class="estilin padando" style="height: calc(100% - (55.34px + 89.5px));" >
-    <h2>Listagem dos Tipos:</h2>
+    <h2>Listagem dos Tipos de usuário:</h2>
     {% for tipos in todos_tipos %}
         <div class="card estilin col-sm-4 padando" style="margin: auto; padding: 50px; background-color: #1E90FF; height: 180px; width: 300px; margin-top: 5px;" >
             <div class="card-body boda estilin" style="text-transform: uppercase; color: white;">
@@ -12,7 +12,7 @@
     </div>
 
     {% empty %}
-    <p>Não há tipo cadastrados!</p>
+    <p>Não há tipos de usuários cadastrados!</p>
     {% endfor %}
     <br>
     <a href="{% url 'cadastrar_tipo' %}" class="btn btn-success">Cadastrar</a>

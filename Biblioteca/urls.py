@@ -54,9 +54,9 @@ urlpatterns = [
     path('area_editar/<int:id>', editar_area, name='editar_area'),
     path('avaliacao_editar/<int:id>', editar_avaliacao, name='editar_avaliacao'),
     path('disciplina_editar/<int:id>', editar_disciplina, name='editar_disciplina'),
-    path('livro_editar/<int:id>', editar_livro, name='editar_livro'),
+    path('livro_editar/<int:isbn>', editar_livro, name='editar_livro'),
     path('recomendacao_editar/<int:id>', editar_recomendacao, name='editar_recomendacao'),
-    path('usario_editar/<int:id>/', editar_usuario, name='editar_usuario'),
+    path('usario_editar/<int:username>/', editar_usuario, name='editar_usuario'),
     path('subarea_editar/<int:id>', editar_subarea, name='editar_subarea'),
     path('tipo_editar/<int:id>', editar_tipo, name='editar_tipo'),
 
@@ -67,9 +67,9 @@ urlpatterns = [
     path('area_remover/<int:id>', remover_area, name='remover_area'),
     path('avaliacao_remover/<int:id>', remover_avaliacao, name='remover_avaliacao'),
     path('disciplina_remover/<int:id>', remover_disciplina, name='remover_disciplina'),
-    path('livro_remover/<int:id>', remover_livro, name='remover_livro'),
+    path('livro_remover/<int:isbn>', remover_livro, name='remover_livro'),
     path('recomendacao_remover/<int:id>', remover_recomendacao, name='remover_recomendacao'),
-    path('usuario_remover/<int:id>', remover_usuario, name='remover_usuario'),
+    path('usuario_remover/<int:username>', remover_usuario, name='remover_usuario'),
     path('subarea_remover/<int:id>', remover_subarea, name='remover_subarea'),
     path('tipo_remover/<int:id>', remover_tipo, name='remover_tipo'),
     #-------------------------------------------------------------------------------------------------------------------------------------------

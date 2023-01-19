@@ -271,8 +271,8 @@ def editar_disciplina(request, id):
     }
     return render(request, 'cruds/disciplina_cadastrar.html', contexto)
 
-def editar_livro(request, id):
-    livro = Livro.objects.get(pk=id)
+def editar_livro(request, isbn):
+    livro = Livro.objects.get(pk=isbn)
 
     form = LivroForm(request.POST or None, request.FILES or None, instance=livro)
 
@@ -281,9 +281,9 @@ def editar_livro(request, id):
         return redirect('listar_livro')
     
     contexto = {
-        'form_disciplina': form
+        'form_livro': form
     }
-    return render(request, 'cruds/usario_cadastrar.html', contexto)
+    return render(request, 'cruds/livro_cadastrar.html', contexto)
 
 def editar_area(request, id):
     area = Area.objects.get(pk=id)
@@ -299,8 +299,8 @@ def editar_area(request, id):
     }
     return render(request, 'cruds/area_cadastrar.html', contexto)
 
-def editar_usuario(request, id):
-    usuario = Usuario.objects.get(pk=id)
+def editar_usuario(request, username):
+    usuario = Usuario.objects.get(pk=username)
 
     form = UsuarioCreationForm(request.POST or None, instance=usuario)
 
@@ -309,7 +309,7 @@ def editar_usuario(request, id):
         return redirect('listar_usuario')
 
     contexto = {
-        'form_usuario': form
+        'form_usuarios': form
     }
 
     return render(request, "cruds/usuario_cadastrar.html", contexto)
@@ -381,7 +381,7 @@ def remover_area(request, id):
     return redirect('listar_area')
 
 def remover_usuario(request, username):
-    usuario = Usuario.objects.get(pk=id)
+    usuario = Usuario.objects.get(pk=username)
     usuario.delete()
     return redirect('listar_usuario')
 

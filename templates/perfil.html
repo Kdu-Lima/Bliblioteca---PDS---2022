@@ -3,12 +3,13 @@
 {% block conteudo %}
 <div class="card estilin col-sm-4 padando" style="margin: auto; padding: 50px; background-color: #1E90FF; height: 180px; width: 300px; margin-top: 5px;" >
     <div class="card-body boda estilin" style="text-transform: uppercase; color: white;">
-    Nome: {{ usuario.nome }}
-    User: {{ usuario.username }}
-    Tipo: {{ usuario.tipo }}
+    <p>Nome: {{ usuario.nome }}</p>
+    <p>User: {{ usuario.username }}</p>
+    <p>Tipo de usuário: {{ usuario.tipo }}</p>
 </div>
        
 </div>
     <p><a href="{% url 'logout' %}">Sair</a></p>
+    <p><a href="{% url 'inicial' %}">Ir para a página inicial</a></p>
 {% endblock %}
     

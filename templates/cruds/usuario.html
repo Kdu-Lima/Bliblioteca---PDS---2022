@@ -15,8 +15,8 @@
     | <a href="{% url 'remover_usuario' usuario.username %}">Remover</a>
 </p>
         
-    {{ empty }}
-    <p>Este usuário não existe</p>
+    {% empty %}
+    <p>Não há usuários</p>
     {% endfor %}
     <p><a href="{% url 'cadastar_usuario' %} " class="btn btn-success">Cadastrar</a></p>
     </div>

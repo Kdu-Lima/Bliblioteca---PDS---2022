@@ -7,7 +7,16 @@
     <p>Nota Geral: {{avaliacao.nota_geral}}</p>
     <p>Usuario: {{avaliacao.usuario}}</p>
     <p>Resenha: {{avaliacao.resenha}}</p>
-    <p>Recomendacao: {{avaliacao.id_recomendacao}} | <a href="{% url 'editar_avaliacao' avaliacao.id %}">EDITAR</a> | <a href="{% url 'remover_avaliacao' avaliacao.id %}">REMOVER</a></p>
+        <p>Título: {{avaliacao.id_recomendacao.isbn_livro.titulo}} </p>
+        <p>Autores: {{avaliacao.id_recomendacao.isbn_livro.autores}}</p>
+        <p>Data de Lançamento: {{avaliacao.id_recomendacao.isbn_livro.data_lancamento}}</p>
+        <p>Sinopse: {{livro.sinopse}}</p>
+        <p>Capa: <img src="/media/{{avaliacao.id_recomendacao.isbn_livro.capa}}" alt="" width="250px"/></p>
+        
+        
+        
+        
+        | <a href="{% url 'editar_avaliacao' avaliacao.id %}">EDITAR</a> | <a href="{% url 'remover_avaliacao' avaliacao.id %}">REMOVER</a></p>
     {% empty %}
     <p>Não há avaliações cadastradas!</p>
     {% endfor %}

@@ -8,11 +8,14 @@
 <div class="card estilin col-sm-4 padando" style="margin: auto; padding: 50px; background-color: #1E90FF; height: 180px; width: 300px; margin-top: 5px;" >
             <div class="card-body boda estilin" style="text-transform: uppercase; color: white;">
                 <p>Nome: {{disciplina.nome}}</div></p>
-                <p><a style="outline: none;" href="{% url 'editar_area' area.id %}" class="btn btn-primary">EDITAR<a style="background-color: rgb(165, 47, 47); margin-left: 10px; outline: none;" href="{% url 'remover_area' area.id %}" class="btn btn-primary">REMOVER</a></p>
+                <p><a style="outline: none;" href="{% url 'editar_disciplina' disciplina.id %}" class="btn btn-primary">EDITAR<a style="background-color: rgb(165, 47, 47); margin-left: 10px; outline: none;" href="{% url 'remover_disciplina' disciplina.id %}" class="btn btn-primary">REMOVER</a></p>
+                </div>
 
     {% empty %}
     <p>Não há disciplinas cadastradas!</p>
     {% endfor %}
-    <a href="{% url 'cadastrar_disciplina' %}" class="btn btn-success">Cadastrar</a>
-</div>
+    
+
+<br>
+<a href="{% url 'cadastrar_disciplina' %}" class="btn btn-success">Cadastrar</a>
 {% endblock %}

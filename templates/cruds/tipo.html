@@ -3,11 +3,12 @@
 {% block conteudo %}
 <div class="estilin padando" style="height: calc(100% - (55.34px + 89.5px));" >
     <h2>Listagem dos Tipos de usuário:</h2>
-    {% for tipos in todos_tipos %}
+    {% for tipo in todos_tipos %}
         <div class="card estilin col-sm-4 padando" style="margin: auto; padding: 50px; background-color: #1E90FF; height: 180px; width: 300px; margin-top: 5px;" >
             <div class="card-body boda estilin" style="text-transform: uppercase; color: white;">
-                <p>Nome: {{tipos.nome}}</p></div>
-                
+                <p>Nome: {{tipo.nome}}</p></div>
+
+                <p><a style="outline: none;" href="{% url 'editar_tipo' tipo.id %}" class="btn btn-primary">EDITAR<a style="background-color: rgb(165, 47, 47); margin-left: 10px; outline: none;" href="{% url 'remover_tipo' tipo.id %}" class="btn btn-primary">REMOVER</a></p>
                
     </div>
 

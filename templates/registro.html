@@ -1,19 +1,14 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
-    <h2> Registro de Usuário</h2>
-    <form method="post">
+    <h2 class="estilin padando">Cadastrar Usuário</h2>
+    <form method="post" class="form-cadastrar-usuario" style="margin-top: -100px; color: white;" >
+        <section class="area-cadastrar-usuario">
+            <div class="cadastrar-usuario">
         {% csrf_token %}
-        <p>Matrícula: {{ form.username }}</p>
-        <p>E-mail: {{ form.email }}</p>
-        <p>Senha: {{ form.password1 }}</p>
-        <p>Repetir Senha: {{ form.password2 }}</p>
-        <p>Nome: {{ form.nome }}</p>
-        <p>
-            <input type="submit" value="Cadastrar" />
-        </p>
-        <p>
-            <a href="{% url 'inicial' %}">Início</a>
-        </p>
+        {{ form }}
+        <br><p><input type="submit" class="cadastrar-usuario-input btn btn-success" value="Cadastrar"></p>
     </form>
-{% endblock %}
+</section>
+</div>
+    {% endblock %}

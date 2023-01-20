@@ -11,7 +11,7 @@
         {% csrf_token %}
         {{ form|crispy }}
     <p><input type="submit" class="login-input" value="Entrar"/></p>
-    <p class="p-login">Não tem conta?<a class="a-login btn btn-success" href= "/usuario_cadastrar">Criar conta</a></p>
+    <p class="p-login">Não tem conta?<a class="a-login btn btn-success" href= "{% url 'registro' %}">Criar conta</a></p>
     </form>
         </div>
     </section>

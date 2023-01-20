@@ -58,21 +58,21 @@ def cadastro_manual(request):
 #CRUDS---------------------------------------------------------------------------------------------------------------------------------------
 
 def listar_tipo(request):
-    tipos = Tipo.objects.all
+    tipos = Tipo.objects.all()
     contexto = {
         'todos_tipos': tipos
     }
     return render(request, 'cruds/tipo.html', contexto)
 
 def listar_disciplina(request):
-    disciplinas = Disciplina.objects.all
+    disciplinas = Disciplina.objects.all()
     contexto = {
         'todas_disciplinas': disciplinas
     }
     return render(request, 'cruds/disciplina.html', contexto)
 
 def listar_livro(request):
-    livros = Livro.objects.all
+    livros = Livro.objects.all()
     contexto = {
         'todos_livros': livros
     }
@@ -80,7 +80,7 @@ def listar_livro(request):
 
 
 def listar_area(request):
-    areas = Area.objects.all
+    areas = Area.objects.all()
     contexto = {
         'todas_areas': areas
     }
@@ -94,21 +94,21 @@ def listar_usuario(request):
     return render(request, 'cruds/usuario.html', contexto)
 
 def listar_subarea(request):
-    subareas = Subarea.objects.all
+    subareas = Subarea.objects.all()
     contexto = {
         'todas_subareas': subareas
     }
     return render(request, 'cruds/subarea.html', contexto)
 
 def listar_recomendacao(request):
-    recomendacoes = Recomendacao.objects.all
+    recomendacoes = Recomendacao.objects.all()
     contexto = {
         'todas_recomendacoes': recomendacoes
     }
     return render(request, 'cruds/recomendacao.html', contexto)
 
 def listar_avaliacao(request):
-    avaliacoes = Avaliacao.objects.all
+    avaliacoes = Avaliacao.objects.all()
     contexto = {
         'todas_avaliacoes': avaliacoes
     }

@@ -1,7 +1,7 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
-<div class="card estilin col-sm-4 padando" style="margin: auto; padding: 50px; background-color: #1E90FF; height: 180px; width: 300px; margin-top: 5px;" >
+<div class="card estilin col-sm-4 padando" style="margin: auto; margin-bottom: 20px; padding: 20px; background-color: #1E90FF; height: 180px; width: 300px; margin-top: 5px;" >
     <div class="card-body boda estilin" style="text-transform: uppercase; color: white;">
     <p>Nome: {{ user.nome }}</p>
     <p>User: {{ user.username }}</p>
@@ -9,7 +9,10 @@
 </div>
        
 </div>
-    <p><a href="{% url 'logout' %}">Sair</a></p>
-    <p><a href="{% url 'inicial' %}">Ir para a página inicial</a></p>
+<div style="text-align: center;">
+    <a href="{% url 'logout' %}" class="btn btn-danger">Sair</a>
+    <a href="{% url 'inicial' %}" class="btn btn-success">Ir para a página inicial</a>
+</div>
+    
 {% endblock %}
     

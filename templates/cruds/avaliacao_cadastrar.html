@@ -1,6 +1,7 @@
 {% extends 'inicial.html' %}
 
 {% block conteudo %}
+<div class="estilin padando">
     <h1>Cadastrar Avaliação</h1>
     <p>Quem recomendou: {{recomendacao.usuario.nome}}</p>
     <p>Disciplina: {{recomendacao.id_disciplina.nome}}</p>
@@ -13,8 +14,9 @@
     <form method="post">
         {% csrf_token %}
         {{ form_avaliacao }}
-        <input type="hidden" name="recomendacao_id" value="{{recomendacao.id}}" />
-        <p><input type="submit" value="Cadastrar"></p>
+        <input type="hidden" name="recomendacao_id" value="{{recomendacao.id}}" /> -
+        <input type="submit" value="Cadastrar" class="btn btn-success">
 
     </form>
+</div>
 {% endblock %}

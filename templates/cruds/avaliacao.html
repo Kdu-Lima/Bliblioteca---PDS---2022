@@ -16,7 +16,7 @@
         
         
         
-        | <a href="{% url 'editar_avaliacao' avaliacao.id %}">EDITAR</a> | <a href="{% url 'remover_avaliacao' avaliacao.id %}">REMOVER</a></p>
+         <a href="{% url 'editar_avaliacao' avaliacao.id %}" class="btn btn-primary">EDITAR</a> | <a href="{% url 'remover_avaliacao' avaliacao.id %}" class="btn btn-danger">REMOVER</a></p>
     {% empty %}
     <p>Não há avaliações cadastradas!</p>
     {% endfor %}

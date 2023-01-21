@@ -11,11 +11,11 @@
     <p>Data de Lançamento: {{livro.data_lancamento}}</p>
     <p>Sinopse: {{livro.sinopse}}</p>
     <p>Capa: <img src="/media/{{livro.capa}}" alt="" width="250px"/></p>
-    <a href="{% url 'editar_livro' livro.isbn %}">Editar</a>
-    | <a href="{% url 'remover_livro' livro.isbn %}">Remover</a>
+    <a href="{% url 'editar_livro' livro.isbn %}" class="btn btn-primary">Editar</a>
+    | <a href="{% url 'remover_livro' livro.isbn %}" class="btn btn-danger">Remover</a>
     {% empty %}
     <p>Não há livros cadastrados</p>
     {% endfor %}
-    <a href="{% url 'cadastrar_livro' %}" class="btn btn-success">Cadastrar</a>
+    | <a href="{% url 'cadastrar_livro' %}" class="btn btn-success">Cadastrar</a>
 </div>
     {% endblock %}
